@@ -10,7 +10,7 @@ import { observable, Observable, of, Subscriber, Subscription } from 'rxjs';
   <h3>
     rxjs kütüphanelerinin çalışmış olduğunu görebilirsiniz...
   </h3>
-        
+        ..
   `,
   styles: []
 })
