@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { observable, Observable, of, Subscriber, Subscription } from 'rxjs';
+import { observable, Observable, of, range, Subscriber, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -19,16 +19,19 @@ export class AppComponent {
   constructor(){
     const array:Array<String>=['1. durum','2. durum'];
     const observable:Observable<String[]>=of(array);
+    const obs1:Observable<number>=range(0,10);
     const subscription:Subscription=observable.subscribe(
       function (x) {
         console.log('Next: ' + x);
     },
-    function (err) {
-        console.log('Error: ' + err);
-    },
     function () {
         console.log('Completed');
     }
-    )
+    );
+    obs1.subscribe({
+      next:value=>{console.log('-> '+value)}    
+    }
+    );
+    
   }
 }
