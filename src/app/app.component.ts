@@ -29,7 +29,7 @@ export class AppComponent {
     }
     );
     obs1.subscribe({
-      next:value=>{console.log('--> '+value)}    
+      next:value=>{console.log('-> '+value)}    
     }
     );
     
